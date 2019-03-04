@@ -1,5 +1,4 @@
 #!/usr/bin/env python -B
-
 import re
 
 
@@ -30,7 +29,7 @@ def add_time(current_time, additional_time):
     # leftover after mod is the remaining minutes of new time
     m_remainder = minute_sum % 60
     # the quotient should be the additional hours to add on
-    add_hours = minute_sum/60
+    add_hours = int(minute_sum//60)
     # zfill the remainder to look pretty
     final_minutes = str(m_remainder).zfill(2)
 
@@ -39,7 +38,7 @@ def add_time(current_time, additional_time):
     # this should be the hour of the new time
     h_remainder = hour_sum % 12
     # this should be the amount of toggles required of the time period
-    toggles = hour_sum/12
+    toggles = int(hour_sum//12)
 
     if h_remainder > 0:
         final_hour = h_remainder
